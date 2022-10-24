@@ -3,9 +3,10 @@ package com.github.infinitumus.studentList.service.impl;
 import com.github.infinitumus.studentList.model.Student;
 import com.github.infinitumus.studentList.service.StudentService;
 import com.github.infinitumus.studentList.util.StudentRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class StudentServiceImpl implements StudentService {
 
     private StudentRepository studentRepository;

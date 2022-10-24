@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Students Management System</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
@@ -29,13 +29,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="student: ${students}}">
+        <tr th:each="student: ${studentList}">
             <th scope="row" th:text="${student.id}"/>
             <th th:text="${student.firstName}"/>
             <th th:text="${student.lastName}"/>
             <th th:text="${student.email}"/>
             <td>
-                <a th:href="@{/students/delete/{id} {id=${student.id}}"
+                <a th:href="@{/students/delete/{id} (id=${student.id})}"
                    class="btn btn-primary">Delete</a>
             </td>
         </tr>

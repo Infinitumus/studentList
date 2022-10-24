@@ -1,7 +1,7 @@
 package com.github.infinitumus.studentList.model;
 
 public class Student {
-    private Long id;
+    private long id;
     private String firstName;
     private String lastName;
     private String email;
@@ -9,7 +9,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(Long id, String firstName, String lastName, String email) {
+    public Student(long id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -20,7 +20,7 @@ public class Student {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

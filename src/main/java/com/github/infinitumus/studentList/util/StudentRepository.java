@@ -11,14 +11,14 @@ import java.util.Optional;
 @Component
 public class StudentRepository {
     private static List<Student> studentList;
-    private static int id = 0;
+    private static long id = 0;
 
     public StudentRepository() {
         if (studentList == null) {
             studentList = new ArrayList<>();
-            studentList.add(new Student());
-            studentList.add(new Student());
-            studentList.add(new Student());
+            studentList.add(new Student(++id, "Alex", "Finch", "alex1976@gmail.com"));
+            studentList.add(new Student(++id, "Diana", "Prince", "diana@yandex.ru"));
+            studentList.add(new Student(++id, "Irina", "Blind", "irbl2017_07@mail.ru"));
         }
     }
 
@@ -26,7 +26,7 @@ public class StudentRepository {
         return studentList;
     }
 
-    public Optional<Student> findById(Long id) {
+    public Optional<Student> findById(long id) {
         for (Student student : studentList) {
             if (student.getId() == id) {
                 return Optional.of(student);
@@ -35,10 +35,10 @@ public class StudentRepository {
         return Optional.empty();
     }
 
-    public Boolean deleteById(Long id){
+    public Boolean deleteById(long id) {
         Iterator<Student> iterator = studentList.iterator();
-        while (iterator.hasNext()){
-            if (iterator.next().getId() == id){
+        while (iterator.hasNext()) {
+            if (iterator.next().getId() == id) {
                 iterator.remove();
                 return true;
             }
@@ -46,8 +46,8 @@ public class StudentRepository {
         return false;
     }
 
-    public void save(Student student){
-        student.setId(Long.valueOf(++id));
+    public void save(Student student) {
+        student.setId(++id);
         studentList.add(student);
     }
 }

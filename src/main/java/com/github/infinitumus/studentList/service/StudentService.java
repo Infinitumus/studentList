@@ -9,7 +9,7 @@ public interface StudentService {
 
     Student saveStudent(Student student);
 
-    Boolean deleteStudentById(long id);
+    void deleteStudentById(long id);
 
     Student getStudentById(long id);
 }

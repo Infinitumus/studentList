@@ -1,7 +1,15 @@
 package com.github.infinitumus.studentList.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String firstName;
     private String lastName;
     private String email;
@@ -9,8 +17,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(long id, String firstName, String lastName, String email) {
-        this.id = id;
+    public Student(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
